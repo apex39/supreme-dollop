@@ -1,5 +1,5 @@
 
-package com.example.supremedollop.view
+package com.example.supremedollop.salesmanSearch
 
 import androidx.lifecycle.ViewModel
 import com.example.supremedollop.repository.SalesmanRepository

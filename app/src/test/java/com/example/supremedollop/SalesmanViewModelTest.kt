@@ -1,7 +1,7 @@
 import com.example.supremedollop.model.Salesman
 import com.example.supremedollop.repository.SalesmanRepository
 import com.example.supremedollop.utils.MainDispatcherRule
-import com.example.supremedollop.view.SalesmanViewModel
+import com.example.supremedollop.salesmanSearch.SalesmanViewModel
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
@@ -52,7 +52,7 @@ class SalesmanViewModelTest {
 
         assertEquals(listOf(emptyList(), mockSalesmen), results)
 
-        job.cancel()  // Clean up
+        job.cancel()
     }
 
     @Test

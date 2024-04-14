@@ -13,7 +13,8 @@ class FakeSalesmanRepository : SalesmanRepository {
         Salesman("Artem Titarenko", listOf("76133")),
         Salesman("Bernd Schmitt", listOf("7619*")),
         Salesman("Chris Krapp", listOf("762*")),
-        Salesman("Alex Uber", listOf("86*"))
+        Salesman("Alex Uber", listOf("86*")),
+        Salesman("Anna Muller", listOf("73133", "76131"))
     )
 
     override fun getAllSalesmen(): List<Salesman> {

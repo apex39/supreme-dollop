@@ -20,7 +20,7 @@ class FakeRepositoryTest {
         val allSalesmen = repository.getAllSalesmen()
 
         // Then
-        assertEquals(4, allSalesmen.size)
+        assertEquals(5, allSalesmen.size)
     }
 
     @Test
@@ -86,6 +86,22 @@ class FakeRepositoryTest {
         // Then
         assertTrue("Salesman Bernd Schmitt should be returned", results.any { it.name == "Bernd Schmitt" })
         assertTrue("Salesman Artem Titarenko should be returned", results.any { it.name == "Artem Titarenko" })
-        assertEquals("Exactly two salesmen should match '762'", 2, results.size)
+        assertTrue("Salesman Anna Muller should be returned", results.any { it.name == "Anna Muller" })
+        assertEquals("Exactly three salesmen should match '762'", 3, results.size)
+    }
+
+    @Test
+    fun `findSalesmenByArea returns same salesman who has 2 postcodes`() {
+        // Given
+        val wildcardQuery1 = "73133"
+        val wildcardQuery2 = "76131"
+
+        // When
+        val results1 = repository.findSalesmenByArea(wildcardQuery1)
+        val results2 = repository.findSalesmenByArea(wildcardQuery2)
+
+        // Then
+        assertTrue("For the first query Anna Muller should be returned", results1.any { it.name == "Anna Muller" })
+        assertTrue("For the second query Anna Muller should be returned", results2.any { it.name == "Anna Muller" })
     }
 }
