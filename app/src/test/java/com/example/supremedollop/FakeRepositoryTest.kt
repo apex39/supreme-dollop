@@ -15,15 +15,6 @@ class FakeRepositoryTest {
     }
 
     @Test
-    fun `getAllSalesmen returns all salesmen`() {
-        // When
-        val allSalesmen = repository.getAllSalesmen()
-
-        // Then
-        assertEquals(5, allSalesmen.size)
-    }
-
-    @Test
     fun `findSalesmenByArea with exact match returns correct salesmen`() {
         // Given
         val areaQuery = "76133"

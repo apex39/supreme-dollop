@@ -3,7 +3,6 @@ package com.example.supremedollop.repository
 import com.example.supremedollop.model.Salesman
 
 interface SalesmanRepository {
-    fun getAllSalesmen(): List<Salesman>
     fun findSalesmenByArea(areaQuery: String): List<Salesman>
 }
 
@@ -16,10 +15,6 @@ class FakeSalesmanRepository : SalesmanRepository {
         Salesman("Alex Uber", listOf("86*")),
         Salesman("Anna Muller", listOf("73133", "76131"))
     )
-
-    override fun getAllSalesmen(): List<Salesman> {
-        return salesmen
-    }
 
     override fun findSalesmenByArea(areaQuery: String): List<Salesman> {
         return salesmen.filter { salesman ->
